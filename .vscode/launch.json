@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Project2Application<project2>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.reposlayers.SpringBootInsuranceApp.Project2Application",
+            "projectName": "project2",
+            "args": ""
+        }
+    ]
+}
