@@ -33,10 +33,10 @@ public class Claim {
     private String agentName;
 //    @Column("")
 //    private String claimCategory;  Make an enum?
-    @Column()
+    @Column(name = "amount")
     private Double amount;
-//    @Column()
-//    private String reason; // make an enum?
+    @Column(name = "reason")
+    private String reason; // make an enum?
     @Column(name = "agentRating")
     private String agentRating;
     @Column(name = "datetime")
@@ -51,5 +51,23 @@ public class Claim {
     private Integer reimbursementID;
     @Column(name = "failureReason")
     private String failureReason;
+
+    /**
+     * reason
+     * failure_reason
+     * reimbursment_id
+     * approval
+     * state
+     * country
+     * datetime
+     * agent_rating
+     * amount
+     * agent_name
+     * agent_id
+     * Customer_age
+     * customer_name
+     * customer_id
+     * claim_id
+     */
 
 }
