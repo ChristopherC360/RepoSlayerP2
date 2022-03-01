@@ -4,16 +4,14 @@ import com.reposlayers.models.Claim;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 
 @Repository
 public interface ClaimRepository extends JpaRepository<Claim, Integer> {
 
-    Claim findByClaimID(Integer claimID);
-
-//    Claim findByCustomerID(Integer id);
-//    Claim findByAgentID(Integer id);
-//    Claim findByReID(Integer id);
+//    Claim findById(int id);
+//    Claim findByCustomerID(int customerID);
+//    Claim findByAgentID(Integer agentID);
+//    Claim findByReimbursementID(Integer reimbursementID);
 //    Claim findByCustomerName(String customerName);
 
 

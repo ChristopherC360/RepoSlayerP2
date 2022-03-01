@@ -6,51 +6,64 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 @Entity(name="claims")
 @Table(name="claims")
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+@AllArgsConstructor @NoArgsConstructor @Data
 public class Claim {
-// left off at 3:30
 
-    // GeneratedValue? Probably not, since we're just retrieving, not updating
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer claimID;
-    @Column(name = "customerId")
-    private Integer customerID;
-    @Column(name = "customerName")
+    @Column(name="claim_id")
+    private Integer id;
+
+    @Column(name = "customer_id")
+    private Integer customerid;
+
+    @Column(name = "customer_name")
     private String customerName;
-    @Column(name = "customerAge")
+
+    @Column(name = "customer_age")
     private Integer customerAge;
-    @Column(name = "agentId")
-    private Integer agentID;
-    @Column(name = "agentName")
+
+    @Column(name = "agent_id")
+    private Integer agentid;
+
+    @Column(name = "agent_name")
     private String agentName;
-//    @Column("")
-//    private String claimCategory;  Make an enum?
-    @Column(name = "amount")
+
+    @Column(name="amount")
     private Double amount;
-    @Column(name = "reason")
-    private String reason; // make an enum?
-    @Column(name = "agentRating")
-    private String agentRating;
+
+    @Column(name = "agent_rating")
+    private Integer agentRating;
+
     @Column(name = "datetime")
-    private LocalDate date;
+    private LocalDateTime date;
+
     @Column(name = "country")
     private String country;
-    @Column(name = "state")
-    private String state;
-    @Column(name = "approval")
-    private String approval; // make enum or boolean
-    @Column(name = "reimbursementId")
-    private Integer reimbursementID;
-    @Column(name = "failureReason")
+
+
+    @Column(name = "reimbursement_id")
+    private Integer reimbursementid;
+
+    @Column(name = "failure_reason")
     private String failureReason;
+
+    @Column(name = "reason")
+    private String reason;
+
+    @Column(name = "approval")
+    private String approval;
+
+
+    //    @Column(name = "amount")
+//    private Integer amount;
+
+
 
     /**
      * reason
