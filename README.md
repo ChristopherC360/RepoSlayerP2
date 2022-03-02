@@ -8,5 +8,3 @@ Java
 Javascipt, HTML, CSS, Bootstrap
 DBeaver
 Talend
-
-Contributors: Christopher Crawford, Daniel Gutierrez, Troy Cogdell, Eric, Courtney Hart, Leonardo

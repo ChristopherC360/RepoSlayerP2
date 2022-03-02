@@ -11,6 +11,10 @@
         <module name="RepoSlayerP2" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ERS" target="1.8" />
+      <module name="LibraryAppMockDB" target="8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
