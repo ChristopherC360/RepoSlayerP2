@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ClaimRepository extends JpaRepository<Claim, Integer> {
 
-//    Claim findById(int id);
+   Claim findById(int id);
 //    Claim findByCustomerID(int customerID);
 //    Claim findByAgentID(Integer agentID);
 //    Claim findByReimbursementID(Integer reimbursementID);

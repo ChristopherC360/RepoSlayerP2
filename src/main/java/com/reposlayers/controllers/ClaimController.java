@@ -29,16 +29,17 @@ public class ClaimController {
     }
 
 
-    @GetMapping(value = "/all"/*, produces = "application/json"*/)
+    @GetMapping
     public List<Claim> getAllClaims(){
         System.out.println(claimRepository.findAll());
         return claimRepository.findAll();
 
     }
 
-    @GetMapping("/id/{id}")
-    public Optional<Claim> getById(@PathVariable int id){
-        return claimRepository.findById(id);
+    @GetMapping("/{claimId}")
+    public Claim getClaim(@PathVariable("claimId") int claimId) {
+        System.out.println(claimRepository.findById(claimId));
+        return claimRepository.findById(claimId);
     }
 
 //    @GetMapping("/claimID/{claimID}")

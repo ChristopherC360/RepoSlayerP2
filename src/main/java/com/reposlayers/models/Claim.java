@@ -1,54 +1,51 @@
 package com.reposlayers.models;
 
 import lombok.*;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 
 @Entity(name="claims")
-@Table(name="claims")
+@Table(name="insurance_information")
 @AllArgsConstructor @NoArgsConstructor @Data
 public class Claim {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="claim_id")
-    private Integer id;
+    private int claimId;
 
     @Column(name = "customer_id")
-    private Integer customerid;
+    private int customerid;
 
     @Column(name = "customer_name")
     private String customerName;
 
     @Column(name = "customer_age")
-    private Integer customerAge;
+    private int customerAge;
 
     @Column(name = "agent_id")
-    private Integer agentid;
+    private int agentId;
 
     @Column(name = "agent_name")
     private String agentName;
 
     @Column(name="amount")
-    private Double amount;
+    private BigDecimal amount;
 
     @Column(name = "agent_rating")
-    private Integer agentRating;
+    private int agentRating;
 
-    @Column(name = "datetime")
-    private LocalDateTime date;
+    private LocalDateTime datetime;
 
     @Column(name = "country")
     private String country;
 
 
     @Column(name = "reimbursement_id")
-    private Integer reimbursementid;
+    private int reimbursementid;
 
     @Column(name = "failure_reason")
     private String failureReason;

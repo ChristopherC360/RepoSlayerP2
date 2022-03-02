@@ -1,16 +1,11 @@
 package com.reposlayers.controllers;
 
-import com.reposlayers.UserService.UserService;
 import com.reposlayers.models.User;
-import com.reposlayers.repositories.LoginRepo;
 import com.reposlayers.repositories.UserRepository;
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -30,18 +25,10 @@ public class UserController  {
 //    public User addUser(@RequestBody User user){
 //        return userRepo.save(user);
 //    }
-    @PostMapping
-    public void addUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        User u = new User();
-        u.setFullName(request.getParameter("name"));
-        u.setEmail(request.getParameter("email"));
-        u.setUsername(request.getParameter("username"));
-        u.setPassword(request.getParameter("password"));
-         userRepo.save(u);
-         response.sendRedirect("index.html");
+    @PostMapping(value = "/addUser", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public void addUser(User user) {
+        userRepo.save(user);
     }
-
-
 
 
     @GetMapping
