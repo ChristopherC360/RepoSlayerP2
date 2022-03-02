@@ -16,24 +16,14 @@ import java.util.Objects;
 
 public class User {
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private Integer id;
     @Column(name = "full_name")
     private String fullName;
-//    @Column(name = "last_name")
-//    private String lastName;
     private String email;
     private String username;
     private String password;
 
-
 }
-
-
-
-
-
