@@ -110,29 +110,46 @@ function getAllClaims() {
 // ---------------------------
 // View Claim Button Alert
 // ---------------------------
+var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
 function viewClaim(id) {
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             let response = JSON.parse(xhr.responseText);
-            alert(`
-            Claim ID: ${response.claimId}
-            Customer ID: ${response.customerId} 
-            Customer Name: ${response.customerName} 
-            Customer Age: ${response.customerAge} 
-            Insurance Type: ${response.reason} 
-            Agent Id: ${response.agentId}
-            Agent Name: ${response.agentName}
-            Agent Rating: ${response.agentRating}
-            Country: ${response.country}
-            Date/Time: ${response.datetime} 
-            Claim Amount: $${response.amount}
-            Approval: ${(response.approval == "Y") ? "Approved" : "Denied"}
-            `);
+
+            document.getElementById("modalHeader").innerHTML = `Claim ID: ${response.claimId}`;
+            document.getElementById("customerIdP").innerHTML = `Customer ID: ${response.customerId}`;
+            document.getElementById("customerNameP").innerHTML = `Customer Name: ${response.customerName}`;
+            document.getElementById("customerAgeP").innerHTML = `Customer Age: ${response.customerAge}`;
+            document.getElementById("insuranceTypeP").innerHTML = `Insurance Reason: ${response.reason}`;
+            document.getElementById("agentIdP").innerHTML = `Agent ID: ${response.agentId}`;
+            document.getElementById("agentNameP").innerHTML = `Agent Name: ${response.agentName}`;
+            document.getElementById("agentRatingP").innerHTML = `Agent Rating: ${response.agentRating}/10`;
+            document.getElementById("countryP").innerHTML = `Country: ${response.country}`;
+            document.getElementById("datetimeP").innerHTML = `Date/Time: ${response.datetime}`;
+            document.getElementById("claimAmountP").innerHTML = `Claim Amount: $${response.amount}`;
+            document.getElementById("approvalP").innerHTML = `Approval: ${(response.approval == "Y") ? "Approved" : "Denied"}`;
         }
     };
     xhr.open("GET", `http://localhost:8080/claims/${id}`, true);
     xhr.send();
+
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 // ---------------------------

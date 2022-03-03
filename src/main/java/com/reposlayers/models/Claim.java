@@ -18,7 +18,7 @@ public class Claim {
     private int claimId;
 
     @Column(name = "customer_id")
-    private int customerid;
+    private int customerId;
 
     @Column(name = "customer_name")
     private String customerName;
