@@ -29,16 +29,11 @@ public class LoginController {
 
         try {
             User u = userRepository.findByUsername(username);
-            System.out.println(u.getUsername());
-            System.out.println(u.getPassword());
-            System.out.println(u);
             if (u != null) {
                 if (username.equals(u.getUsername()) && password.equals(u.getPassword())) {
-                    System.out.println("Login successful");
                     request.getSession().setAttribute("user", u);
                     response.sendRedirect("Dashboard.html");
                 } else {
-                    System.out.println("Credentials do not match");
                     response.sendRedirect("index.html");
                 }
             }

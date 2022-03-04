@@ -30,14 +30,12 @@ public class ClaimController {
 
     @GetMapping
     public List<Claim> getAllClaims(){
-        System.out.println(claimRepository.findAll());
         return claimRepository.findAll();
 
     }
 
     @GetMapping("/{claimId}")
     public Claim getClaim(@PathVariable("claimId") int claimId) {
-        System.out.println(claimRepository.findById(claimId));
         return claimRepository.findById(claimId);
     }
 
